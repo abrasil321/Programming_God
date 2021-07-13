@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Styles/styleFile.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <title>Programming God</title>
+</head>
+<body onload="subBtnTutoring()">
+    <header>
+        <div id="myBg">
+            <img src="../pictures/tutor.jpg" alt="Articles">
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="logo">
+                    <a href="/"> <img alt="Alex Brasil" src="./pictures/logo.png" class="rounded-circle"> </a>
+                </div>
+                <div class="menu">
+                    <a class="headMenu" href="/">Home</a>
+                    <a class="headMenu" href="/playlist">Videos</a>
+                    <a class="headMenu" href="/articles">Articles</a>
+                    <a class="headMenu" href="#" style="color: rgba(3, 75, 182, 0.856);">Tutoring</a>
+                    <form class="headMenu" action="/signUp" method="POST">
+                        <button id="sUbtn" type="submit" class="btn btn-info float-right">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+            <p class="homeParaV">
+                Tutoring
+            </p>
+        </div>
+    </header>
+    <form id="signForm" class="d-flex flex-column badge badge-dark p-3" action="/create-checkout-session" method="POST">
+        <h3>Personal Information</h3>
+        <label class="d-flex">First Name:</label>
+        <input id=fName class="form-control" type="text" onchange="subBtnTutoring()">
+        <br>
+        <label class="d-flex">Last Name:</label>
+        <input id=lName class="form-control" type="text" onchange="subBtnTutoring()">
+        <br>
+        <label class="d-flex">Email Address:</label>
+        <input id=uEmail class="form-control" type="email" onchange="subBtnTutoring()">
+        <br>
+        <h3>Pick a Section</h3>
+        <label class="d-flex">Choose a Date:</label>
+        <input id=date class="form-control" type="date" max="2022-12-31" onchange="subBtnTutoring()">
+        <br>
+        <label  class="d-flex">Choose a Time:</label>
+        <input id=time class="form-control" type="time" onchange="subBtnTutoring()">
+        <br>
+        <button id="checkout-button" type="submit" onclick="sendtutoringEmail();" class="btn btn-outline-success mt-4">Request & Pay</button>
+    </form>
+    <hr>
+    <footer>
+        By Alex Brasil | <a href="https://www.linkedin.com/in/alexdbrasil" target="_blank">Linkedin</a>
+    </footer>
+    <script src="Scripts/tutoring.js"></script>
+</body>
+</html>

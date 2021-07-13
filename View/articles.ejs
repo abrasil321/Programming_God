@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Styles/styleFile.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Programming God</title>
+</head>
+<body>
+    <header>
+        <div id="myBg">
+            <img src="../pictures/reading.jpeg" alt="Articles">
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="logo">
+                    <a href="/"> <img alt="Alex Brasil" src="./pictures/logo.png" class="rounded-circle"> </a>
+                </div>
+                <div class="menu">
+                    <a class="headMenu" href="/">Home</a>
+                    <a class="headMenu" href="/playlist">Videos</a>
+                    <a class="headMenu" href="#" style="color: rgba(3, 75, 182, 0.856);">Articles</a>
+                    <a class="headMenu" href="/tutoring">Tutoring</a>
+                    <form class="headMenu" action="/signUp" method="POST">
+                        <button id="sUbtn" type="submit" class="btn btn-info float-right">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+            <p class="homeParaV">
+                Articles
+            </p>
+        </div>
+    </header>
+    <form action="search" class="d-flex justify-content-end" method="GET">
+        <input class="mr-1 form-control w-25" type="text" name="title" placeholder="Search for an article here...">
+        <button class="btn btn-primary" type="submit">Go</button>
+    </form>
+    <form action="article" id="signForm" class="d-flex flex-column badge badge-dark p-5" method="POST">
+        <div class="dispArticles text-center">
+            <% JSON.stringify(results); %>
+            <%  results.forEach(function(o) { var title = o.title;%>
+                <div class="d-flex justify-content-start">
+                    <button class="btn btn-dark p-2" type="submit" name="title" value="<%=title%>"><i class="material-icons">import_contacts</i>  <%= title%> </button>      
+                </div>
+            <% }); %>
+        </div>
+    </form>
+    <hr>
+    <footer>
+        By Alex Brasil | <a href="https://www.linkedin.com/in/alexdbrasil" target="_blank">Linkedin</a>
+    </footer>
+</body>
+</html>
