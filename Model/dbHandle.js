@@ -2,7 +2,7 @@
 const { Router, json } = require('express');
 const { Pool } = require('pg');
 const { render } = require("ejs");
-const dbURL = "postgres://pyfknayxfztfsj:fbd5f1ac8efb6b24c0f50d995ccdc9522204a4a1a13b84214422a6b46f0b9211@ec2-34-195-233-155.compute-1.amazonaws.com:5432/d1tta51r8si4ki";
+const dbURL = myPostgresUrl;
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL || dbURL,
     ssl: {
