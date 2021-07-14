@@ -1,4 +1,4 @@
-const stripeKey = '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';
+const stripeKey = myPrivateKey;
 const stripe = require('stripe')(stripeKey);
 const callDbClass = require("../Model/dbHandle.js");
 const dbClass = new callDbClass.dataBaseReturn();
