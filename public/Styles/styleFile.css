@@ -47,7 +47,7 @@ a:hover {
   text-decoration: none !important;
 }
 
-button.btn.btn-info.float-right {
+button.btn.btn-primary.float-right {
   width: 150%;
 }
 
@@ -99,13 +99,6 @@ img {
   background-color: #252a2edc;
   font-family: Georgia, 'Times New Roman', Times, serif;
   width: 50% !important;
-}
-
-footer {
-  text-align: center;
-  width: 99%;
-  margin-bottom: 2%;
-  background: transparent;
 }
 
 .sections {
@@ -210,8 +203,25 @@ div.container.text-light.bg-dark.pb-2.pt-3.pl-5.rounded, div.container.text-dang
   margin-top: 65vh !important;
 }
 
-p.h6{
+p.h6 {
   font-size: 1.3em !important;
+}
+
+
+.footerIcons{
+  width: 3%;
+  margin-right: 2%;
+  transition: transform 0.5s;
+}
+.footerIcons:hover{
+  transform: translateY(-20%);
+}
+footer {
+  position: absolute;
+  text-align: center;
+  width: 99%;
+  margin-top: 93vh;
+  background: transparent;
 }
 
 @media screen and (max-width: 985px) {

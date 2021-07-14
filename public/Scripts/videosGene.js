@@ -103,9 +103,9 @@ function generator1(){
     ];
 
     let display = '<div id="videosCont" class="d-flex align-content-center flex-wrap-row rounded">';
-    let screenRes = window.screen.width * window.devicePixelRatio;
-
-    if(screenRes > 1242){
+    let screenRes = window.screen.width * window.devicePixelRatio; // gets the screen resolution
+    console.log(screenRes);
+    if(screenRes > 1439){
       videoRow = 3;
       for(let i = 1; i < links.length; i++){
         display += `<div class="d-flex flex-column m-3 embed-responsive embed-responsive-4by3">
@@ -117,7 +117,7 @@ function generator1(){
         }
       }   
     }
-    else if(screenRes <= 1242){
+    else if(screenRes <= 1439){
       for(let i = 1; i < links.length; i++){
         display += `<div class="d-flex flex-column m-3 embed-responsive embed-responsive-4by3">
                         <iframe src="${links[i].url}" rel="${links[i].label}" class="embed-responsive-item" allowfullscreen></iframe>
@@ -133,10 +133,8 @@ function generator1(){
     document.getElementById("dispList").innerHTML = display;
 }
 
-window.addEventListener('load', (event)=>{
-  generator1();
-})
 
+// loads videos and checks for screen resizing 
 let bd = document.getElementsByTagName("body")[0];
 new ResizeObserver(() => generator1()).observe(bd);
 

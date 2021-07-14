@@ -1,7 +1,9 @@
+// pops term of conditions on sign Up page
 $(document).hover(()=>{
     $('[data-toggle="popover"]').popover();
 });
 
+// loading icons for videos page
 setTimeout(function(){ 
     $(window).ready(function() {
         $('#loading-image').stop( true, true ).fadeOut();
@@ -22,6 +24,7 @@ function setCookie(){
     document.cookie = "name=" + FName + ",email=" + UEmail;
 }
 
+// send welcome email
 function sendEmail() {
 	let getFirstName = document.getElementById("userFirstName").value;
     let getEmail = document.getElementById("userEmailAddr").value;
@@ -44,6 +47,7 @@ function sendEmail() {
 	});
 }
 
+// enable button after filling form
 function subBtn(){
     let userFirst = document.getElementById("userFname").value;
     let userLast = document.getElementById("userFname").value;
@@ -56,7 +60,5 @@ function subBtn(){
     else{
         document.getElementById("signBtn").disabled = false;
     }
-
-    
 }
 

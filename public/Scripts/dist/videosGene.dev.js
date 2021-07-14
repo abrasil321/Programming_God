@@ -78,9 +78,11 @@ function generator1() {
     url: "https://www.youtube.com/embed/LpoG7rhsN7M"
   }];
   var display = '<div id="videosCont" class="d-flex align-content-center flex-wrap-row rounded">';
-  var screenRes = window.screen.width * window.devicePixelRatio;
+  var screenRes = window.screen.width * window.devicePixelRatio; // gets the screen resolution
 
-  if (screenRes > 1242) {
+  console.log(screenRes);
+
+  if (screenRes > 1439) {
     videoRow = 3;
 
     for (var i = 1; i < links.length; i++) {
@@ -90,7 +92,7 @@ function generator1() {
         display += "</div><hr>\n                      <div  id=\"videosCont\" class=\"d-flex align-content-center flex-wrap-row rounded\">";
       }
     }
-  } else if (screenRes <= 1242) {
+  } else if (screenRes <= 1439) {
     for (var _i = 1; _i < links.length; _i++) {
       display += "<div class=\"d-flex flex-column m-3 embed-responsive embed-responsive-4by3\">\n                        <iframe src=\"".concat(links[_i].url, "\" rel=\"").concat(links[_i].label, "\" class=\"embed-responsive-item\" allowfullscreen></iframe>\n                    </div>");
 
@@ -102,11 +104,9 @@ function generator1() {
 
   display += "</div>";
   document.getElementById("dispList").innerHTML = display;
-}
+} // loads videos and checks for screen resizing 
 
-window.addEventListener('load', function (event) {
-  generator1();
-});
+
 var bd = document.getElementsByTagName("body")[0];
 new ResizeObserver(function () {
   return generator1();

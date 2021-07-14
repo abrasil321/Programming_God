@@ -1,3 +1,4 @@
+// enable button after filling form
 function subBtnTutoring(){
     let fName  = document.getElementById("fName").value;
     let lName = document.getElementById("lName").value;
@@ -17,7 +18,7 @@ function subBtnTutoring(){
     }
 }
 
-
+// send email about tutoring request
 const sendtutoringEmail = () => {
     let tFName = document.getElementById("fName").value;
     let tFEmail = document.getElementById("uEmail").value;
@@ -39,3 +40,41 @@ const sendtutoringEmail = () => {
         Alex Brasil`,
     });
 };
+
+// display calendar input on Safari
+let dateClass = ".datechk";
+$(document).ready(function () {
+  if (document.querySelector(dateClass).type !== "date") {
+    var oCSS = document.createElement("link");
+    oCSS.type = "text/css";
+    oCSS.rel = "stylesheet";
+    oCSS.href =
+      "//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css";
+    oCSS.onload = function () {
+      var oJS = document.createElement("script");
+      oJS.type = "text/javascript";
+      oJS.src =
+        "//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js";
+      oJS.onload = function () {
+        $(dateClass).datepicker();
+      };
+      document.body.appendChild(oJS);
+    };
+    document.body.appendChild(oCSS);
+  }
+});
+
+// display time input on Safari
+$(document).ready(function(){
+  $('.timepicker').timepicker({
+      timeFormat: 'h:mm p',
+      interval: 15,
+      minTime: '10:00am',
+      maxTime: '6:00pm',
+      defaultTime: '10:00am',
+      startTime: '10:00am',
+      dynamic: false,
+      dropdown: true,
+      scrollbar: true
+  });
+});
