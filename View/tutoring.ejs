@@ -53,10 +53,10 @@
         <br>
         <h3>Pick a Section</h3>
         <label class="d-flex">Choose a Date:</label>
-        <input id=date class="form-control datechk" type="date" onchange="subBtnTutoring()">
+        <input id=date class="form-control datechk" type="text" placeholder="mm/dd/yyyy" onchange="subBtnTutoring()">
         <br>
         <label  class="d-flex">Choose a Time:</label>
-        <input id=time class="form-control timepicker" type="time" onchange="subBtnTutoring()">
+        <input id=time class="form-control timepicker" type="text" placeholder="--:-- --" onchange="subBtnTutoring()" required>
         <br>
         <button id="checkout-button" type="submit" onclick="sendtutoringEmail();" class="btn btn-outline-success mt-4">Request & Pay</button>
     </form>

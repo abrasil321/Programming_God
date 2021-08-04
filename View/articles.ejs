@@ -16,7 +16,7 @@
 <body>
     <header>
         <div id="myBg">
-            <img src="../pictures/reading.jpeg" alt="Articles">
+            <img id="imgHead" src="../pictures/reading.jpeg" alt="Articles">
         </div>
         <div class="content">
             <div class="container">
@@ -40,9 +40,9 @@
     </header>
     <form action="search" class="d-flex justify-content-end" method="GET">
         <input class="mr-1 form-control w-25" type="text" name="title" placeholder="Search for an article here...">
-        <button class="btn btn-primary" type="submit">Go</button>
+        <button id="go" class="btn btn-primary" type="submit">Go</button>
     </form>
-    <form action="article" id="signForm" class="d-flex flex-column badge badge-dark p-5" method="POST">
+    <form action="article" id="signForm" class="d-flex flex-column badge badge-dark p-2" method="POST">
         <div class="dispArticles text-center">
             <% JSON.stringify(results); %>
             <%  results.forEach(function(o) { var title = o.title;%>

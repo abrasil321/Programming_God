@@ -13,7 +13,6 @@
     <title>Programming God</title>
 </head>
 <body>
-    <% JSON.stringify(results); results.forEach(function(o) { var title=o.title; var content=o.content; %>
     <header>
         <div id="myBg">
             <img src="../pictures/article.jpg" alt="Article">
@@ -33,7 +32,8 @@
                     </form>
                 </div>
             </div>
-            <p class="homeParaV">
+            <% JSON.stringify(results); results.forEach(function(o) { var title=o.title; var content=o.content; %>
+            <p id=artTitle class="homeParaV" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
                 <%=title %>
             </p>
         </div>
