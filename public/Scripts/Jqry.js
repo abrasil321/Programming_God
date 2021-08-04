@@ -30,7 +30,7 @@ function sendEmail() {
     let getEmail = document.getElementById("userEmailAddr").value;
 
 	Email.send({
-        SecureToken : "0bb5c96e-0e47-4383-82aa-fba3e839e76d",
+        SecureToken : "myKey",
         To : `${getEmail}`,
         Bcc: "alexfbrazil123@gmail.com",
         From : "alexfbrazil123@gmail.com",
