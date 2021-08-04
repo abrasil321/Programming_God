@@ -24,7 +24,7 @@ const sendtutoringEmail = () => {
     let tFtime = document.getElementById("time").value;
 
     Email.send({
-        SecureToken : "0bb5c96e-0e47-4383-82aa-fba3e839e76d",
+        SecureToken : "MyKey",
         To : `${tFEmail}`,
         Bcc: "alexfbrazil123@gmail.com",
         From : "alexfbrazil123@gmail.com",
